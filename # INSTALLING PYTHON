@@ -1,0 +1,59 @@
+# INSTALLING PYTHON
+
+------------------------
+
+1) Checking python is already installed
+   python --version 
+NOTE* :At the time of creating this note, python 2 version 2.7+ or 3 version 3.4+ or later is required.
+   a) To check python 3 is already installed
+   python3 --version
+2) If python 2 version 2.7+ or 3 version 3.4+ or later is not installed, install python with your distributions package manager.
+
+Here my linux distribution is debain so I can use the following command
+
+   	sudo apt-get install python3
+   			OR 
+   	sudo apt-get install python
+3) Verify that python is installed
+	python3 --version
+The above command will return the installed version of python3	
+
+# INSTALLATION OF pip
+
+1) Download the installation script using the curl command
+   curl -O https://bootstrap.pypa.io/get-pip.py
+In the above command we uses the  -O (Upper case O) parameter to specify that the file downloaded to be stored in the current folder using the same name it has on the remote host.
+2) Run the script using python to download and install latest version of pip and other required support packages
+	python get-pip.py --user
+			OR
+	python3 get-pip.py --user
+
+Note*: While running the above command if you encounter no modules found for distutils.util, please run the below command before running the above command. The --user switch argument specifies pip to install to the bath ~/.local/bin
+	sudo apt-get install python3-distutils
+
+3) Add pip to the PATH variable
+To do this you have to add the below command to the shell's profile script in your user folder.
+   export PATH=~/.local/bin:$PATH
+Find your shell's profile script in your user folder.
+	ls -a ~
+
+Not sure about  which shell you have, run echo $SHELL
+
+Bash – .bash_profile, .profile, or .bash_login
+
+Zsh – .zshrc
+
+Tcsh – .tcshrc, .cshrc or .login
+Here I have bash shell, so I gonna add the path export command at the end of .profile script. Since I don't have a .bash_profile by default. Since .bash_profile does not come by default, you can just create it,if you want to add to .bash_profile. But it's fine if you edit the .profile script which is the default profile script. 
+
+4) Reload the profile into your current session to put those changes into effect.
+
+	source ~/.bash_profile
+	     OR
+	source ~/.profile
+
+5) Now you can test to verify that pip is installed correctly.
+	pip3 --version
+
+sudo add-apt-repository \"deb [arch=arm64] https://download.docker.com/linux/debian \$(lsb_release -cs) \stable"
+echo "deb https://apt.dockerproject.org/repo ubuntu-trusty main” | sudo tee /etc/apt/sources.list.d/docker.list
