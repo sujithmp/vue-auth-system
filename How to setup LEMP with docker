@@ -1,0 +1,27 @@
+How to setup LEMP with docker
+
+Create a project folder, it will contain the source code and nginx configuration.
+
+Seperate the both from each other by creating directories for both.
+Currently our project folder will look like this:
+	project-folder
+ 		- nginx
+ 		- src
+
+
+In the next step, create a default.conf file in nginx directory.
+Similarly clone a laravel project in the src folder. The src directory will hold your source code.
+
+In the root directory create a docker-compose.yml file, this is the file in which we will write the necessary instuctions to create the containers.
+
+In the next step, I will create an text file in the root directory. Please note the name of this file:'Dockerfile'. Dockerfile contains instructions to build an container. 
+
+
+
+Now our project directory will look like this:
+	project-folder
+		- nginx
+		- src
+		docker-compose.yml
+		Dockerfile
+		
